@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 140" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4B978"/>
+      <stop offset="30%" style="stop-color:#E8D5A0"/>
+      <stop offset="50%" style="stop-color:#C9A84C"/>
+      <stop offset="70%" style="stop-color:#E0C87A"/>
+      <stop offset="100%" style="stop-color:#D4B978"/>
+    </linearGradient>
+  </defs>
+  <text x="140" y="80" text-anchor="middle" font-family="'DM Serif Display', Georgia, 'Times New Roman', serif" font-size="82" fill="url(#gold)" letter-spacing="-2">O&amp;K</text>
+  <text x="140" y="115" text-anchor="middle" font-family="'DM Sans', -apple-system, sans-serif" font-size="18" fill="#8EAFD4" letter-spacing="2" font-weight="400">ICT and AI Consultants</text>
+</svg>
