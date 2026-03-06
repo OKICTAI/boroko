@@ -46,7 +46,7 @@ export default function Navbar() {
             className="flex items-center gap-2.5 group"
           >
             <img
-              src="/logo.svg"
+              src={`${import.meta.env.BASE_URL}logo.svg`}
               alt="O&K ICT and AI Consultants"
               className="h-10 sm:h-12 w-auto group-hover:scale-105 transition-transform duration-500"
             />

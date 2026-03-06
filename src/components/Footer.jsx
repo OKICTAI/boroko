@@ -63,7 +63,7 @@ export default function Footer() {
           <div className="col-span-2">
             <button onClick={scrollToTop} className="mb-5 group">
               <img
-                src="/logo.svg"
+                src={`${import.meta.env.BASE_URL}logo.svg`}
                 alt="O&K ICT and AI Consultants"
                 className="h-12 w-auto brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-500"
               />

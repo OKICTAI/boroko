@@ -86,7 +86,7 @@ export default function About() {
             <div className="card p-7 mb-8">
               <div className="flex items-center gap-5 mb-5">
                 <img
-                  src="/logo.svg"
+                  src={`${import.meta.env.BASE_URL}logo.svg`}
                   alt="O&K ICT and AI Consultants"
                   className="h-14 w-auto flex-shrink-0"
                 />
