@@ -5,6 +5,7 @@ import Solution from './components/Solution'
 import HowItWorks from './components/HowItWorks'
 import Testimonials from './components/Testimonials'
 import About from './components/About'
+import Blog from './components/Blog'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 
@@ -19,6 +20,7 @@ export default function App() {
         <HowItWorks />
         <Testimonials />
         <About />
+        <Blog />
         <CTA />
       </main>
       <Footer />

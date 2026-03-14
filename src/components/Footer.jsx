@@ -9,7 +9,7 @@ const footerLinks = {
   ],
   Resources: [
     { label: 'AI Starter Guide', href: '#' },
-    { label: 'Blog & Tips', href: '#' },
+    { label: 'Blog & Tips', href: '#blog' },
     { label: 'FAQ', href: '#' },
   ],
 }
