@@ -118,7 +118,7 @@ export default function CTA() {
             {/* Image */}
             <div className="rounded-2xl overflow-hidden shadow-sm">
               <img
-                src={`${import.meta.env.BASE_URL}cta-photo.jpg`}
+                src={`${import.meta.env.BASE_URL}cta-new.jpg`}
                 alt="O&K consultancy engagement"
                 className="w-full h-48 object-cover object-top"
                 loading="lazy"

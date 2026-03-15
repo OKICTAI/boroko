@@ -101,14 +101,24 @@ export default function About() {
               </p>
             </div>
 
-            {/* Photo */}
-            <div className="rounded-2xl overflow-hidden mb-8 shadow-md">
-              <img
-                src={`${import.meta.env.BASE_URL}cta-photo.jpg`}
-                alt="O&K team working with a client organisation"
-                className="w-full h-56 object-cover"
-                loading="lazy"
-              />
+            {/* Photos */}
+            <div className="grid grid-cols-2 gap-3 mb-8">
+              <div className="rounded-2xl overflow-hidden shadow-md">
+                <img
+                  src={`${import.meta.env.BASE_URL}cta-photo.jpg`}
+                  alt="O&K consultant at work"
+                  className="w-full h-48 object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-md">
+                <img
+                  src={`${import.meta.env.BASE_URL}bri-olewale.jpg`}
+                  alt="PNG government professionals with AI systems"
+                  className="w-full h-48 object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
             </div>
 
             <div className="space-y-4 text-warm-600 leading-relaxed">

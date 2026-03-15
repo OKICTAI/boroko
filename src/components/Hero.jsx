@@ -145,7 +145,7 @@ export default function Hero() {
                 <img
                   src={`${import.meta.env.BASE_URL}hero-photo.jpg`}
                   alt="PNG professionals in a boardroom meeting"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                   loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-sage-900/20 to-transparent" />
