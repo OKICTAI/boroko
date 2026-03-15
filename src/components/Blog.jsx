@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { BookOpen, Calendar, Clock, ArrowRight, X, ChevronLeft } from 'lucide-react'
 import { posts } from '../data/posts'
@@ -174,7 +174,7 @@ function ArticleModal({ post, onClose }) {
             <div className="flex flex-wrap gap-3">
               {/* Facebook */}
               <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.origin + window.location.pathname + '#' + post.slug)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
@@ -187,7 +187,7 @@ function ArticleModal({ post, onClose }) {
               </a>
               {/* X / Twitter */}
               <a
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.href)}`}
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.origin + window.location.pathname + '#' + post.slug)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
@@ -200,7 +200,7 @@ function ArticleModal({ post, onClose }) {
               </a>
               {/* WhatsApp */}
               <a
-                href={`https://wa.me/?text=${encodeURIComponent(post.title + ' — ' + window.location.href)}`}
+                href={`https://wa.me/?text=${encodeURIComponent(post.title + ' — ' + window.location.origin + window.location.pathname + '#' + post.slug)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
@@ -223,6 +223,25 @@ export default function Blog() {
   const [selected, setSelected] = useState(null)
   const headerRef = useRef(null)
   const headerInView = useInView(headerRef, { once: true, margin: '-80px' })
+
+  // Open article from URL hash on load
+  useEffect(() => {
+    const slug = window.location.hash.replace('#', '')
+    if (slug) {
+      const match = posts.find(p => p.slug === slug)
+      if (match) setSelected(match)
+    }
+  }, [])
+
+  function openPost(post) {
+    window.location.hash = post.slug
+    setSelected(post)
+  }
+
+  function closePost() {
+    history.pushState('', document.title, window.location.pathname + window.location.search)
+    setSelected(null)
+  }
 
   return (
     <>
@@ -275,7 +294,7 @@ export default function Blog() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease }}
-                onClick={() => setSelected(post)}
+                onClick={() => openPost(post)}
                 className="card card-hover text-left p-6 flex flex-col gap-4 w-full group"
               >
                 {/* Category badge */}
@@ -320,7 +339,7 @@ export default function Blog() {
       {/* Article modal */}
       <AnimatePresence>
         {selected && (
-          <ArticleModal post={selected} onClose={() => setSelected(null)} />
+          <ArticleModal post={selected} onClose={closePost} />
         )}
       </AnimatePresence>
     </>

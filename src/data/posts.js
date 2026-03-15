@@ -5,6 +5,7 @@
 export const posts = [
   {
     id: 4,
+    slug: 'data-sovereignty-llms-png',
     title: 'Achieving Data Sovereignty through On-Premise Local LLMs in PNG Provincial Administration',
     date: '2026-03-15',
     category: 'Policy & Research',
@@ -123,6 +124,7 @@ Provincial administrations, DICT, and development partners wishing to discuss AI
   },
   {
     id: 1,
+    slug: 'ai-save-2-hours-every-day',
     title: 'How AI Can Save You 2 Hours Every Day at Work',
     date: '2026-03-10',
     category: 'Productivity',
@@ -150,6 +152,7 @@ Start with just one of these. Pick the task that frustrates you most and try it 
   },
   {
     id: 2,
+    slug: 'ai-not-coming-for-your-job',
     title: 'AI Is Not Coming for Your Job — Unless You Ignore It',
     date: '2026-02-28',
     category: 'Careers',
@@ -171,6 +174,7 @@ If you're worried about your future in this AI era, let's talk. A free 30-minute
   },
   {
     id: 3,
+    slug: 'ai-prompts-every-manager-png',
     title: '3 AI Prompts Every Manager in PNG Should Know',
     date: '2026-02-10',
     category: 'Tips & Tricks',
