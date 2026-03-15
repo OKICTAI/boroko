@@ -108,8 +108,8 @@ export default function About() {
             {/* Warm photo */}
             <div className="rounded-3xl overflow-hidden mb-8 shadow-md">
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80&fit=crop"
-                alt="Diverse team working together"
+                src={`${import.meta.env.BASE_URL}cta-photo.jpg`}
+                alt="PNG professional reviewing documents"
                 className="w-full h-56 object-cover"
                 loading="lazy"
               />
