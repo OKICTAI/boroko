@@ -40,7 +40,7 @@ const steps = [
     icon: Rocket,
     title: 'Delivery & Implementation',
     subtitle: 'Agreed timeline',
-    desc: 'We deliver the agreed programme — whether that's staff training workshops, AI workflow setup, policy development, or a combination — with hands-on support throughout.',
+    desc: "We deliver the agreed programme — whether that's staff training workshops, AI workflow setup, policy development, or a combination — with hands-on support throughout.",
     details: [
       'Structured workshops and training sessions',
       'AI tool setup and workflow integration',
