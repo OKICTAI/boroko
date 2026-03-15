@@ -6,6 +6,7 @@ export const posts = [
   {
     id: 4,
     slug: 'data-sovereignty-llms-png',
+    image: 'bri-olewale.png',
     title: 'Achieving Data Sovereignty through On-Premise Local LLMs in PNG Provincial Administration',
     date: '2026-03-15',
     category: 'Policy & Research',

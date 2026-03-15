@@ -100,6 +100,13 @@ function ArticleModal({ post, onClose }) {
         className="relative w-full max-w-2xl my-8 bg-white rounded-3xl shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Hero image */}
+        {post.image && (
+          <div className="w-full h-56 sm:h-72 overflow-hidden">
+            <img src={`${import.meta.env.BASE_URL}${post.image}`} alt={post.title} className="w-full h-full object-cover" />
+          </div>
+        )}
+
         {/* Header */}
         <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-md border-b border-warm-100 px-7 py-4 flex items-center justify-between">
           <button
@@ -295,8 +302,21 @@ export default function Blog() {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease }}
                 onClick={() => openPost(post)}
-                className="card card-hover text-left p-6 flex flex-col gap-4 w-full group"
+                className="card card-hover text-left flex flex-col gap-0 w-full group overflow-hidden"
               >
+                {/* Thumbnail */}
+                {post.image && (
+                  <div className="w-full h-44 overflow-hidden rounded-t-2xl">
+                    <img
+                      src={`${import.meta.env.BASE_URL}${post.image}`}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
+
+                {/* Card body */}
+                <div className="flex flex-col gap-4 p-6 flex-1">
                 {/* Category badge */}
                 <span
                   className={`self-start text-xs font-medium px-3 py-1 rounded-full border ${
@@ -330,6 +350,7 @@ export default function Blog() {
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </div>
+                </div>{/* end card body */}
               </motion.button>
             ))}
           </div>
