@@ -117,6 +117,16 @@ export default function CTA() {
               </div>
             </div>
 
+            {/* Warm image */}
+            <div className="rounded-2xl overflow-hidden shadow-sm">
+              <img
+                src={`${import.meta.env.BASE_URL}cta-photo.jpg`}
+                alt="Professional ready to learn"
+                className="w-full h-48 object-cover object-top"
+                loading="lazy"
+              />
+            </div>
+
           </motion.div>
 
           {/* Right: Calendar booking */}
