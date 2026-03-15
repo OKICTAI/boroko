@@ -1,33 +1,33 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Clock, HelpCircle, TrendingDown, BookX, ArrowRight } from 'lucide-react'
+import { Users, ArrowRight } from 'lucide-react'
 
 const ease = [0.22, 1, 0.36, 1]
 
-const painPoints = [
+const clientTypes = [
   {
-    emoji: '😰',
-    title: 'Everyone\'s talking about AI — and you\'re not sure where to start',
-    desc: 'Your colleagues are using ChatGPT, your boss is asking about AI strategy, and you feel like you\'re already falling behind. The pressure is real.',
+    emoji: '🏛️',
+    title: 'Government & Public Sector',
+    desc: 'Provincial and district administrations, government departments, and public agencies looking to improve reporting, correspondence, records management, and service delivery through practical AI tools.',
   },
   {
-    emoji: '📚',
-    title: 'Online courses feel generic and overwhelming',
-    desc: 'You\'ve tried YouTube tutorials and online courses, but they\'re not designed for your role, your industry, or Papua New Guinea\'s unique context.',
+    emoji: '🏫',
+    title: 'Schools & Education Providers',
+    desc: 'Primary schools, secondary schools, colleges, and universities seeking to build AI literacy among staff, improve administrative efficiency, and prepare students for an AI-enabled workforce.',
   },
   {
-    emoji: '⏳',
-    title: 'You don\'t have time to figure it out alone',
-    desc: 'Between meetings, deadlines, and responsibilities, who has hours to experiment with AI tools and hope something sticks?',
+    emoji: '🏢',
+    title: 'SMEs & Corporate Teams',
+    desc: 'Small and medium enterprises, retail operations, construction firms, and corporate teams that want to reduce admin burden, improve document workflows, and equip staff with practical AI skills.',
   },
   {
-    emoji: '🤷',
-    title: 'You\'re not sure which AI tools actually matter for your work',
-    desc: 'There are hundreds of AI tools out there. Which ones are worth learning? Which ones will actually make a difference in your day-to-day?',
+    emoji: '🌍',
+    title: 'NGOs & Development Programs',
+    desc: 'Non-government organisations, donor-funded programs, and development partners that need AI training for field and office teams, AI-assisted reporting, and digital capability uplift.',
   },
 ]
 
-function PainCard({ emoji, title, desc, index }) {
+function ClientCard({ emoji, title, desc, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
@@ -40,7 +40,7 @@ function PainCard({ emoji, title, desc, index }) {
       className="card p-7 card-hover"
     >
       <div className="text-3xl mb-4">{emoji}</div>
-      <h3 className="text-lg font-serif text-warm-900 mb-2 leading-snug">{title}</h3>
+      <h3 className="text-lg font-display font-bold text-warm-900 mb-2 leading-snug">{title}</h3>
       <p className="text-warm-500 text-sm leading-relaxed">{desc}</p>
     </motion.div>
   )
@@ -51,13 +51,10 @@ export default function Problem() {
   const headerInView = useInView(headerRef, { once: true, margin: '-80px' })
 
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Soft background */}
+    <section id="who-we-serve" className="relative py-24 lg:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-cream-100 to-cream-50" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-warm-200/50 to-transparent" />
-
-      {/* Organic blob */}
-      <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-sage-50/50 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-sage-50/40 blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8">
 
@@ -70,8 +67,8 @@ export default function Problem() {
             className="flex justify-center mb-5"
           >
             <span className="section-label">
-              <HelpCircle className="w-4 h-4" />
-              Sound Familiar?
+              <Users className="w-3.5 h-3.5" />
+              Who We Serve
             </span>
           </motion.div>
 
@@ -79,10 +76,10 @@ export default function Problem() {
             initial={{ opacity: 0, y: 20 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1, ease }}
-            className="text-3xl lg:text-4xl xl:text-[2.75rem] text-warm-900 mb-5 leading-tight"
+            className="text-3xl lg:text-4xl xl:text-[2.75rem] font-display font-bold text-warm-900 mb-5 leading-tight"
           >
-            AI is changing everything.{' '}
-            <span className="text-sage-500 italic">But nobody's teaching you how to use it.</span>
+            Practical AI support for every type of{' '}
+            <span className="text-sage-500">organisation in PNG</span>
           </motion.h2>
 
           <motion.p
@@ -91,18 +88,18 @@ export default function Problem() {
             transition={{ duration: 0.7, delay: 0.2, ease }}
             className="text-lg text-warm-500 leading-relaxed"
           >
-            You're a capable professional. You just need the right guide to help you unlock AI — in a way that fits your actual work life.
+            We work with all types of organisations — from government offices and schools to businesses and NGOs — wherever there is a need to build AI capability and improve how work gets done.
           </motion.p>
         </div>
 
-        {/* Pain points */}
+        {/* Client type cards */}
         <div className="grid sm:grid-cols-2 gap-6 mb-16">
-          {painPoints.map((point, i) => (
-            <PainCard key={point.title} {...point} index={i} />
+          {clientTypes.map((client, i) => (
+            <ClientCard key={client.title} {...client} index={i} />
           ))}
         </div>
 
-        {/* Transition callout */}
+        {/* Callout */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -111,15 +108,17 @@ export default function Problem() {
           className="text-center max-w-xl mx-auto"
         >
           <div className="card-soft p-8 lg:p-10 text-center">
-            <p className="text-xl font-serif text-warm-800 leading-relaxed mb-4">
-              You don't need another online course.<br />
-              You need <span className="text-sage-500 italic">someone in your corner</span>.
+            <p className="text-xl font-display font-bold text-warm-800 leading-relaxed mb-4">
+              Not sure if we're the right fit?
+            </p>
+            <p className="text-warm-500 mb-5 text-sm leading-relaxed">
+              Book a free discovery call and we'll give you an honest assessment of how AI can help your organisation — no obligation.
             </p>
             <button
-              onClick={() => document.querySelector('#solution')?.scrollIntoView({ behavior: 'smooth' })}
-              className="inline-flex items-center gap-2 text-sage-600 font-medium hover:text-sage-700 transition-colors"
+              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="inline-flex items-center gap-2 text-sage-600 font-semibold hover:text-sage-700 transition-colors text-sm"
             >
-              Here's how we help
+              Talk to us
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

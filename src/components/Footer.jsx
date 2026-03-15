@@ -1,16 +1,17 @@
 import { Mail, Phone, MapPin, ArrowRight, ChevronUp } from 'lucide-react'
 
 const footerLinks = {
-  Navigation: [
-    { label: 'About', href: '#about' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Results', href: '#testimonials' },
-    { label: 'Book a Call', href: '#contact' },
+  Services: [
+    { label: 'AI Team Training', href: '#solution' },
+    { label: 'AI Workflow Setup', href: '#solution' },
+    { label: 'AI Policy Guidance', href: '#solution' },
+    { label: 'Website Development', href: '#solution' },
   ],
-  Resources: [
-    { label: 'AI Starter Guide', href: '#' },
-    { label: 'Blog & Tips', href: '#blog' },
-    { label: 'FAQ', href: '#' },
+  Company: [
+    { label: 'About O&K', href: '#about' },
+    { label: 'Our Process', href: '#how-it-works' },
+    { label: 'Client Outcomes', href: '#testimonials' },
+    { label: 'Blog & Insights', href: '#blog' },
   ],
 }
 
@@ -35,20 +36,20 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto px-5 sm:px-8 py-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-5 text-center lg:text-left">
             <div>
-              <h3 className="text-xl font-serif text-white mb-1">
-                Ready to start learning AI?
+              <h3 className="text-xl font-display font-bold text-white mb-1">
+                Ready to bring AI to your organisation?
               </h3>
               <p className="text-sage-100/80 text-sm">
-                Book a free, no-obligation discovery call today.
+                Book a free discovery session — no obligation.
               </p>
             </div>
             <a
               href="https://calendar.app.google/ww9fxbTy2CsCMwT6A"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white text-sage-700 font-medium hover:bg-cream-50 transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-white text-sage-700 font-semibold hover:bg-cream-50 transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
             >
-              Book Free Consultation
+              Book a Consultation
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -65,15 +66,14 @@ export default function Footer() {
               <img
                 src={`${import.meta.env.BASE_URL}logo.svg`}
                 alt="O&K ICT and AI Consultants"
-                className="h-12 w-auto brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                className="h-12 w-auto brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-300"
               />
             </button>
 
             <p className="text-sm text-warm-400 leading-relaxed mb-6 max-w-xs">
-              Personal 1-on-1 AI coaching for professionals in Papua New Guinea. Learn practical AI skills that transform how you work.
+              AI and ICT consulting for organisations in Papua New Guinea. Practical training, workflow improvement, and digital solutions that create lasting capability.
             </p>
 
-            {/* Contact */}
             <div className="space-y-2.5">
               {contactItems.map(({ icon: Icon, value, href }) => (
                 <div key={value} className="flex items-center gap-2.5">
@@ -93,7 +93,7 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([heading, links]) => (
             <div key={heading}>
-              <h4 className="text-xs font-medium text-warm-500 uppercase tracking-widest mb-5">
+              <h4 className="text-xs font-semibold text-warm-500 uppercase tracking-widest mb-5">
                 {heading}
               </h4>
               <ul className="space-y-3">
@@ -116,7 +116,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-warm-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-warm-500">
-            © {new Date().getFullYear()} O&amp;K ICT Consulting. All rights reserved. Port Moresby, PNG.
+            © {new Date().getFullYear()} O&amp;K ICT and AI Consultants (Olewale &amp; Kilaviri Ltd). All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a href="#" className="text-xs text-warm-500 hover:text-warm-300 transition-colors">Privacy</a>
@@ -129,7 +129,7 @@ export default function Footer() {
       {/* Scroll to top */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 w-10 h-10 rounded-full bg-white/90 border border-warm-200 flex items-center justify-center text-warm-600 hover:text-sage-600 shadow-lg hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm"
+        className="fixed bottom-6 right-6 z-50 w-10 h-10 rounded-xl bg-white/90 border border-warm-200 flex items-center justify-center text-warm-600 hover:text-sage-600 shadow-lg hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm"
         aria-label="Scroll to top"
       >
         <ChevronUp className="w-5 h-5" />

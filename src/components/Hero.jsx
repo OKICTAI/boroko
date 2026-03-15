@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles, Star, Play } from 'lucide-react'
+import { ArrowRight, Building2, Star, ChevronRight } from 'lucide-react'
 
 const ease = [0.22, 1, 0.36, 1]
 
@@ -13,11 +13,11 @@ const fadeUp = {
 }
 
 const trustAvatars = [
-  { initials: 'KM', bg: 'bg-sage-400' },
-  { initials: 'RP', bg: 'bg-clay-400' },
-  { initials: 'TS', bg: 'bg-sage-600' },
+  { initials: 'GV', bg: 'bg-sage-500' },
+  { initials: 'SP', bg: 'bg-clay-400' },
+  { initials: 'TS', bg: 'bg-sage-700' },
   { initials: 'JN', bg: 'bg-warm-500' },
-  { initials: 'ML', bg: 'bg-sage-300' },
+  { initials: 'ML', bg: 'bg-sage-400' },
 ]
 
 export default function Hero() {
@@ -29,34 +29,34 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
-      {/* Organic background blobs */}
+      {/* Background */}
+      <div className="absolute inset-0 bg-cream-50" />
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-sage-100/60 blur-3xl animate-breathe" />
-        <div className="absolute top-1/3 -left-48 w-[400px] h-[400px] rounded-full bg-clay-100/50 blur-3xl animate-float-slow" />
-        <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] rounded-full bg-sage-50/80 blur-3xl" />
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-sage-100/40 blur-3xl animate-breathe" />
+        <div className="absolute top-1/2 -left-48 w-[400px] h-[400px] rounded-full bg-clay-50/50 blur-3xl animate-float-slow" />
+        <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] rounded-full bg-sage-50/60 blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* Left column — copy */}
+          {/* Left column */}
           <div className="space-y-8 max-w-xl">
 
             {/* Badge */}
             <motion.div custom={0} variants={fadeUp} initial="hidden" animate="visible">
               <span className="section-label">
-                <Sparkles className="w-4 h-4" />
-                1-on-1 AI Coaching in Papua New Guinea
+                <Building2 className="w-3.5 h-3.5" />
+                AI & ICT Consultancy · Papua New Guinea
               </span>
             </motion.div>
 
             {/* Headline */}
             <motion.div custom={1} variants={fadeUp} initial="hidden" animate="visible">
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-normal leading-[1.12] tracking-tight text-balance">
-                Learn to use{' '}
-                <span className="gradient-text-sage italic">AI at work</span>
-                — with a guide who{' '}
-                <span className="gradient-text-sage italic">gets it</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-display font-bold leading-[1.1] tracking-tight text-warm-900 text-balance">
+                Practical AI solutions for{' '}
+                <span className="gradient-text-sage">organisations</span>{' '}
+                in Papua New Guinea
               </h1>
             </motion.div>
 
@@ -66,9 +66,9 @@ export default function Hero() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="text-lg text-warm-600 leading-relaxed"
+              className="text-lg text-warm-500 leading-relaxed"
             >
-              Personalised, practical AI coaching for professionals in PNG. No jargon, no overwhelm — just the skills you need to work smarter, with one-on-one guidance every step of the way.
+              We work with government teams, SMEs, schools, and NGOs to introduce practical AI tools, train staff, improve workflows, and support better digital delivery across PNG.
             </motion.p>
 
             {/* CTAs */}
@@ -77,23 +77,23 @@ export default function Hero() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-3"
             >
               <a
                 href="#contact"
                 onClick={(e) => handleCTA(e, '#contact')}
                 className="btn-primary text-base"
               >
-                Book a Free Consultation
+                Book a Consultation
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
-                href="#how-it-works"
-                onClick={(e) => handleCTA(e, '#how-it-works')}
+                href="#solution"
+                onClick={(e) => handleCTA(e, '#solution')}
                 className="btn-secondary text-base"
               >
-                <Play className="w-4 h-4 fill-sage-500" />
-                See How It Works
+                Explore Our Services
+                <ChevronRight className="w-4 h-4" />
               </a>
             </motion.div>
 
@@ -109,7 +109,7 @@ export default function Hero() {
                 {trustAvatars.map(({ initials, bg }, i) => (
                   <div
                     key={initials}
-                    className={`w-9 h-9 rounded-full ${bg} border-2 border-cream-100 flex items-center justify-center text-[11px] font-bold text-white`}
+                    className={`w-9 h-9 rounded-full ${bg} border-2 border-cream-50 flex items-center justify-center text-[11px] font-bold text-white`}
                     style={{ zIndex: trustAvatars.length - i }}
                   >
                     {initials}
@@ -123,7 +123,7 @@ export default function Hero() {
                   ))}
                 </div>
                 <p className="text-sm text-warm-500">
-                  Trusted by <span className="text-warm-800 font-medium">300+ professionals</span> across PNG
+                  Trusted by <span className="text-warm-800 font-semibold">50+ organisations</span> across PNG
                 </p>
               </div>
             </motion.div>
@@ -136,7 +136,6 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.3, ease }}
             className="relative flex justify-center"
           >
-            {/* Main circular visual */}
             <div className="relative w-80 h-80 sm:w-96 sm:h-96">
               {/* Outer ring */}
               <div className="absolute inset-0 rounded-full border-2 border-dashed border-sage-200/40 animate-[spin_60s_linear_infinite]" />
@@ -149,7 +148,6 @@ export default function Hero() {
                   className="w-full h-full object-cover"
                   loading="eager"
                 />
-                {/* Soft overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-sage-900/20 to-transparent" />
               </div>
 
@@ -159,12 +157,12 @@ export default function Hero() {
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -top-3 right-4 card px-4 py-3 flex items-center gap-3"
               >
-                <div className="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center">
-                  <span className="text-lg">🎯</span>
+                <div className="w-10 h-10 rounded-lg bg-sage-100 flex items-center justify-center">
+                  <span className="text-lg">🏛️</span>
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-warm-800">Practical Skills</div>
-                  <div className="text-xs text-warm-500">Not theory</div>
+                  <div className="text-sm font-semibold text-warm-800">Government Ready</div>
+                  <div className="text-xs text-warm-400">Policy-aligned AI</div>
                 </div>
               </motion.div>
 
@@ -173,12 +171,12 @@ export default function Hero() {
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
                 className="absolute bottom-4 -left-4 card px-4 py-3 flex items-center gap-3"
               >
-                <div className="w-10 h-10 rounded-full bg-clay-100 flex items-center justify-center">
-                  <span className="text-lg">🤝</span>
+                <div className="w-10 h-10 rounded-lg bg-clay-100 flex items-center justify-center">
+                  <span className="text-lg">👥</span>
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-warm-800">1-on-1 Guidance</div>
-                  <div className="text-xs text-warm-500">At your pace</div>
+                  <div className="text-sm font-semibold text-warm-800">Team Training</div>
+                  <div className="text-xs text-warm-400">Staff capability uplift</div>
                 </div>
               </motion.div>
 
@@ -187,12 +185,12 @@ export default function Hero() {
                 transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
                 className="absolute top-1/2 -right-8 card px-4 py-3 flex items-center gap-3"
               >
-                <div className="w-10 h-10 rounded-full bg-sage-50 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-sage-50 flex items-center justify-center">
                   <span className="text-lg">🇵🇬</span>
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-warm-800">PNG Context</div>
-                  <div className="text-xs text-warm-500">Locally relevant</div>
+                  <div className="text-sm font-semibold text-warm-800">PNG-Based</div>
+                  <div className="text-xs text-warm-400">Locally grounded</div>
                 </div>
               </motion.div>
             </div>
