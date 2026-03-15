@@ -144,8 +144,8 @@ export default function Hero() {
               {/* Photo circle */}
               <div className="absolute inset-4 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=600&q=80&fit=crop&crop=faces"
-                  alt="Diverse professionals learning together"
+                  src={`${import.meta.env.BASE_URL}hero-photo.jpg`}
+                  alt="PNG professionals in a boardroom meeting"
                   className="w-full h-full object-cover"
                   loading="eager"
                 />
