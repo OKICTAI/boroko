@@ -120,7 +120,7 @@ export default function CTA() {
             {/* Warm image */}
             <div className="rounded-2xl overflow-hidden shadow-sm">
               <img
-                src="https://images.unsplash.com/photo-1573497019236-17f8177b81e8?w=600&q=80&fit=crop&crop=faces&facepad=2"
+                src={`${import.meta.env.BASE_URL}cta-photo.png`}
                 alt="Professional ready to learn"
                 className="w-full h-48 object-cover object-top"
                 loading="lazy"
